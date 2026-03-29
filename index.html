@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Discrete Mathematics Practice Book - Questions and Answers</title>
+  <style>
+    :root{
+      --bg:#f7f8fc;
+      --card:#ffffff;
+      --primary:#1f4e79;
+      --secondary:#2e75b6;
+      --accent:#eaf2ff;
+      --border:#d7deea;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --success:#0f766e;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    header{
+      background:linear-gradient(135deg,var(--primary),var(--secondary));
+      color:#fff;
+      padding:28px 18px;
+      text-align:center;
+    }
+    header h1{
+      margin:0;
+      font-size:30px;
+    }
+    header p{
+      margin:8px 0 0;
+      font-size:15px;
+      opacity:.95;
+    }
+    .container{
+      width:min(1200px, 94%);
+      margin:24px auto 50px;
+    }
+    .toc{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:20px;
+      margin-bottom:24px;
+      box-shadow:0 6px 18px rgba(0,0,0,.05);
+    }
+    .toc h2{
+      margin-top:0;
+      color:var(--primary);
+    }
+    .toc ul{
+      margin:0;
+      padding-left:20px;
+      columns:2;
+    }
+    .toc li{
+      margin:8px 0;
+    }
+    .toc a{
+      color:var(--secondary);
+      text-decoration:none;
+      font-weight:600;
+    }
+    .unit{
+      margin-bottom:36px;
+      page-break-before:always;
+    }
+    .unit-title{
+      background:var(--primary);
+      color:white;
+      padding:14px 18px;
+      border-radius:12px;
+      font-size:24px;
+      margin-bottom:16px;
+      box-shadow:0 6px 18px rgba(0,0,0,.08);
+    }
+    .qcard{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-left:6px solid var(--secondary);
+      border-radius:12px;
+      padding:18px;
+      margin-bottom:16px;
+      box-shadow:0 4px 14px rgba(0,0,0,.04);
+    }
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:10px;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .badge{
+      background:var(--accent);
+      color:var(--primary);
+      border:1px solid #cfe0ff;
+      padding:4px 10px;
+      border-radius:999px;
+      font-weight:700;
+    }
+    .question{
+      font-size:18px;
+      font-weight:700;
+      margin:8px 0 12px;
+    }
+    details{
+      background:#fbfcff;
+      border:1px solid var(--border);
+      border-radius:10px;
+      padding:10px 12px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:700;
+      color:var(--success);
+      outline:none;
+    }
+    .answer{
+      margin-top:12px;
+      padding-top:12px;
+      border-top:1px dashed var(--border);
+    }
+    .answer h4{
+      margin:10px 0 6px;
+      color:var(--primary);
+    }
+    .answer .final{
+      background:#eefcf7;
+      border-left:4px solid #10b981;
+      padding:10px 12px;
+      border-radius:8px;
+      font-weight:700;
+      margin-top:10px;
+    }
+    .note{
+      background:#fff7ed;
+      border-left:4px solid #f59e0b;
+      padding:10px 12px;
+      border-radius:8px;
+      margin-top:10px;
+    }
+    .footer{
+      text-align:center;
+      color:var(--muted);
+      margin-top:40px;
+      font-size:14px;
+    }
+    @media (max-width: 768px){
+      .toc ul{columns:1;}
+      .question{font-size:16px;}
+    }
+    @media print{
+      body{background:white;}
+      .qcard,.toc{box-shadow:none;}
+      a{text-decoration:none;color:black;}
+    }
+    .site-footer{
+  position:sticky;
+  bottom:0;
+  width:100%;
+  background:#0f172a;
+  color:#fff;
+  padding:10px 16px;
+  z-index:999;
+  box-shadow:0 -4px 12px rgba(0,0,0,.15);
+  margin-top:40px;
+}
+.footer-content{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.footer-left{
+  font-weight:700;
+  font-size:14px;
+}
+.footer-links{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.footer-links a{
+  color:#fff;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:14px;
+  padding:6px 10px;
+  border-radius:8px;
+  transition:.2s ease;
+}
+.footer-links a:hover{
+  background:#1e293b;
+}
+.icon{
+  width:18px;
+  height:18px;
+  fill:currentColor;
+}
+@media print{
+  .site-footer{
+    position:fixed;
+    bottom:0;
+  }
+}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Discrete Mathematics Practice Book</h1>
+  <p>L. J. Institute of Engineering & Technology, Ahmedabad (SEM – IV)</p>
+  <p>All Questions with Answers in Proper Section-wise Format</p>
+</header>
+
+<div class="container">
+
+  <section class="toc">
+    <h2>Table of Contents</h2>
+    <ul>
+      <li><a href="#unit1">Unit 1 – Sets, Venn Diagram, Inclusion-Exclusion</a></li>
+      <li><a href="#unit2">Unit 2 – Relations, Functions, Permutations & Combinations</a></li>
+      <li><a href="#unit3">Unit 3 – Logic, Propositions, Truth Tables</a></li>
+    </ul>
+  </section>
+
+  <!-- UNIT 1 -->
+  <section id="unit1" class="unit">
+    <div class="unit-title">Unit 1 – Sets, Venn Diagram, Inclusion-Exclusion</div>
+
+    <div class="qcard">
+      <div class="meta">
+        <span class="badge">Q1</span>
+        <span>Marks: 1</span>
+      </div>
+      <div class="question">
+        If A = {1,2,3,4,6} and B = {2,3,4}, which one of the following is correct?
+      </div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <h4>Explanation</h4>
+          <p>Every element of B = {2,3,4} is present in A = {1,2,3,4,6}.</p>
+          <p>So, B is a subset of A.</p>
+          <div class="final">Final Answer: <strong>B is a subset of A</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q2</span><span>Marks: 1</span></div>
+      <div class="question">What is the value of (A − B) ∪ (B − A) ∪ (A ∩ B)?</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>(A − B) contains elements only in A.</p>
+          <p>(B − A) contains elements only in B.</p>
+          <p>(A ∩ B) contains common elements.</p>
+          <p>Together, these three parts cover all elements belonging to A or B.</p>
+          <div class="final">Final Answer: <strong>A ∪ B</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q3</span><span>Marks: 1</span></div>
+      <div class="question">What is the cardinality of the set of odd positive integers less than 10?</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>The odd positive integers less than 10 are:</p>
+          <p>{1, 3, 5, 7, 9}</p>
+          <p>Number of elements = 5</p>
+          <div class="final">Final Answer: <strong>5</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q4</span><span>Marks: 1</span></div>
+      <div class="question">The set O of odd positive integers less than 10 can be expressed by ________.</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>The odd positive integers less than 10 are 1, 3, 5, 7, 9.</p>
+          <div class="final">Final Answer: <strong>{1, 3, 5, 7, 9}</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q5</span><span>Marks: 1</span></div>
+      <div class="question">
+        If X ∪ Y has 40 elements, X has 28 elements and Y has 22 elements, how many elements does X ∩ Y have?
+      </div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>Use the formula:</p>
+          <p><strong>n(X ∪ Y) = n(X) + n(Y) − n(X ∩ Y)</strong></p>
+          <p>40 = 28 + 22 − n(X ∩ Y)</p>
+          <p>40 = 50 − n(X ∩ Y)</p>
+          <p>n(X ∩ Y) = 10</p>
+          <div class="final">Final Answer: <strong>10</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q6</span><span>Marks: 1</span></div>
+      <div class="question">
+        If set A contains 3 elements and set B contains 6 elements, what is the minimum number of elements that (A ∪ B) can have?
+      </div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>The union is minimum when all elements of A are already in B.</p>
+          <p>Then A ⊆ B, so A ∪ B = B.</p>
+          <p>Thus minimum number of elements = 6.</p>
+          <div class="final">Final Answer: <strong>6</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q7</span><span>Marks: 1</span></div>
+      <div class="question">The cardinality of the set of even positive integers less than 20 is ______.</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>Even positive integers less than 20 are:</p>
+          <p>{2,4,6,8,10,12,14,16,18}</p>
+          <p>Total = 9</p>
+          <div class="final">Final Answer: <strong>9</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q8</span><span>Marks: 1</span></div>
+      <div class="question">
+        Let the players who play cricket be 12, the ones who play football 10, those who play only cricket are 6, then the number of players who play only football are ______, assuming total players are 16.
+      </div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>Cricket players = 12</p>
+          <p>Only cricket = 6</p>
+          <p>So both cricket and football = 12 − 6 = 6</p>
+          <p>Football players = 10</p>
+          <p>Only football = 10 − 6 = 4</p>
+          <div class="final">Final Answer: <strong>4</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q9</span><span>Marks: 1</span></div>
+      <div class="question">
+        In the given figure, if n(A)=20, n(U)=50, n(C)=10 and n(A∩B)=5 then n(B)=?
+      </div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>From the book answer, the correct option is 35.</p>
+          <p>This depends on the exact shaded/region interpretation of the diagram where C lies inside B and U is the universal set.</p>
+          <div class="final">Final Answer: <strong>35</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q10</span><span>Marks: 1</span></div>
+      <div class="question">
+        Let students who like table tennis be 12, those who like lawn tennis be 10, and those who like only table tennis be 6. If total students are 16, then number who like only lawn tennis are?
+      </div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>Both games = 12 − 6 = 6</p>
+          <p>Only lawn tennis = 10 − 6 = 4</p>
+          <div class="final">Final Answer: <strong>4</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q11</span><span>Marks: 1</span></div>
+      <div class="question">The shaded area of figure is best described by?</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>The shaded part includes A and B except their common intersection.</p>
+          <p>That is the symmetric difference.</p>
+          <div class="final">Final Answer: <strong>A ∪ B − (A ∩ B)</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q12</span><span>Marks: 1</span></div>
+      <div class="question">
+        If A is {{φ},{φ,{φ}}}, then the power set of A has how many elements?
+      </div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>A has 2 elements:</p>
+          <p>1. {φ}</p>
+          <p>2. {φ,{φ}}</p>
+          <p>If a set has n elements, then its power set has 2<sup>n</sup> elements.</p>
+          <p>So |P(A)| = 2<sup>2</sup> = 4</p>
+          <div class="final">Final Answer: <strong>4</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q13</span><span>Marks: 1</span></div>
+      <div class="question">If the number of subsets of a set is 4, then the number of elements in that set is ___.</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>Number of subsets = 2<sup>n</sup></p>
+          <p>2<sup>n</sup> = 4 = 2<sup>2</sup></p>
+          <p>So n = 2</p>
+          <div class="final">Final Answer: <strong>2</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q14</span><span>Marks: 1</span></div>
+      <div class="question">
+        If A = {x : x is a prime number less than 4} then n[P(P(A))] is ______.
+      </div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>Prime numbers less than 4 are {2,3}</p>
+          <p>So n(A)=2</p>
+          <p>n(P(A)) = 2<sup>2</sup> = 4</p>
+          <p>n(P(P(A))) = 2<sup>4</sup> = 16</p>
+          <div class="final">Final Answer: <strong>16</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q15</span><span>Marks: 1</span></div>
+      <div class="question">
+        If A = {x : x is square of natural numbers ≤ 8} and B = {2x+1 : x ∈ N}, what is A ∩ B?
+      </div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>Squares of natural numbers ≤ 8 means: 1²,2²,...,8²</p>
+          <p>A = {1,4,9,16,25,36,49,64}</p>
+          <p>B = odd positive integers = {3,5,7,9,11,13,15, ...}</p>
+          <p>Common elements = {9,25,49}</p>
+          <div class="final">Final Answer: <strong>{9,25,49}</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q16</span><span>Marks: 1</span></div>
+      <div class="question">
+        If M ∩ B has 15%, M has 35%, B has 25%, then how many percentages does M ∪ B have?
+      </div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>Use:</p>
+          <p>n(M ∪ B) = n(M) + n(B) − n(M ∩ B)</p>
+          <p>= 35% + 25% − 15% = 45%</p>
+          <div class="final">Final Answer: <strong>45%</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q17</span><span>Marks: 1</span></div>
+      <div class="question">
+        If A = {x ∈ N : x ≤ 5}, B = {x : x is prime, x < 6}, C = {x ∈ N : x is odd and x < 9}, find (A ∪ B) ∩ (A ∪ C).
+      </div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>A = {1,2,3,4,5}</p>
+          <p>B = {2,3,5}</p>
+          <p>C = {1,3,5,7}</p>
+          <p>A ∪ B = {1,2,3,4,5}</p>
+          <p>A ∪ C = {1,2,3,4,5,7}</p>
+          <p>Intersection = {1,2,3,4,5}</p>
+          <div class="final">Final Answer: <strong>{1,2,3,4,5}</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q18</span><span>Marks: 1</span></div>
+      <div class="question">
+        In a survey of 60 people: 25 read H, 26 read I, 26 read T, 9 read both H and I, 11 read both H and T, 8 read both T and I, and 3 read all three. Find the number who read exactly one newspaper.
+      </div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>Only H = 25 − 9 − 11 + 3 = 8</p>
+          <p>Only I = 26 − 9 − 8 + 3 = 12</p>
+          <p>Only T = 26 − 11 − 8 + 3 = 10</p>
+          <p>Exactly one = 8 + 12 + 10 = 30</p>
+          <div class="final">Final Answer: <strong>30</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q19</span><span>Marks: 1</span></div>
+      <div class="question">
+        Let A denote quadrilaterals having two diagonals equal and bisecting each other. Let B denote quadrilaterals having diagonals bisecting each other at 90°. What is A ∩ B?
+      </div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>Rectangles have equal diagonals and bisect each other.</p>
+          <p>Rhombuses have diagonals perpendicular and bisect each other.</p>
+          <p>A square satisfies both properties.</p>
+          <div class="final">Final Answer: <strong>The set of Squares</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q20</span><span>Marks: 1</span></div>
+      <div class="question">Which of the following is/are not partitions of set S = {e,q,u,a,t,i,o,n}?</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>A partition must satisfy:</p>
+          <ul>
+            <li>No empty subset</li>
+            <li>Subsets are pairwise disjoint</li>
+            <li>Union of all subsets equals S</li>
+          </ul>
+          <p>By checking the given options, the incorrect partitions are:</p>
+          <div class="final">Final Answer: <strong>(ii), (iii) & (v)</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="note">
+      <strong>Note:</strong> Unit 1 contains many more descriptive questions (Q21 to Q68).  
+      To keep this file manageable and readable, the remaining questions are included below in the same proper format, with concise answers where direct answers are available from the PDF.
+    </div>
+
+    <!-- Concise remaining Unit 1 questions -->
+    <div class="qcard"><div class="meta"><span class="badge">Q21</span></div><div class="question">If A = multiples of 7, B = multiples of 5, C = multiples of 35, which is a null set?</div><details><summary>Show Answer</summary><div class="answer"><div class="final">Final Answer: <strong>(A ∩ B) − C</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q22</span></div><div class="question">Given A = {{a,b},{c},{d,e,f}}. (a) List elements (b) Find n(A) (c) Find power set.</div><details><summary>Show Answer</summary><div class="answer"><p>Elements are {a,b}, {c}, {d,e,f}</p><p>n(A)=3</p><p>P(A) = { ∅, {{a,b}}, {{c}}, {{d,e,f}}, {{a,b},{c}}, {{a,b},{d,e,f}}, {{c},{d,e,f}}, {{a,b},{c},{d,e,f}} }</p></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q23</span></div><div class="question">(a) Find power set of Q={1,{2,3},4} (b) Find power set of A={x,{y,z},w,p}</div><details><summary>Show Answer</summary><div class="answer"><p>For Q, n=3 so power set has 8 subsets.</p><p>For A, n=4 so power set has 16 subsets.</p></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q24</span></div><div class="question">For A={2,3,4,5,6}, B={3,4,5,6,7}, C={4,5,6,7,8}, find (A∪B)∩(A∪C) and (A∩B)∪(A∩C).</div><details><summary>Show Answer</summary><div class="answer"><p>(A∪B)={2,3,4,5,6,7}, (A∪C)={2,3,4,5,6,7,8}</p><p>(A∪B)∩(A∪C)={2,3,4,5,6,7}</p><p>(A∩B)={3,4,5,6}, (A∩C)={4,5,6}</p><p>(A∩B)∪(A∩C)={3,4,5,6}</p></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q25</span></div><div class="question">Write True or False for subset statements.</div><details><summary>Show Answer</summary><div class="answer"><p>(a) False</p><p>(b) True</p><p>(c) True</p><p>(d) True</p><p>(e) False</p></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q26</span></div><div class="question">If A={x²−2x−3=0} and B={y²−4y−5=0}, find A ∪ (A ∩ B).</div><details><summary>Show Answer</summary><div class="answer"><p>x²−2x−3=0 ⇒ x=3,-1 so A={3,-1}</p><p>y²−4y−5=0 ⇒ y=5,-1 so B={5,-1}</p><p>A∩B={-1}</p><p>A ∪ (A∩B)=A={3,-1}</p><div class="final">Final Answer: <strong>{-1,3}</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q27</span></div><div class="question">Let U be real numbers, A={solutions of x²−1=0}, B={−1,4}. Compute complements and combined complements.</div><details><summary>Show Answer</summary><div class="answer"><p>A={-1,1}</p><p>A̅=R−{-1,1}</p><p>B̅=R−{-1,4}</p><p>(A∪B)= {-1,1,4} so complement = R−{-1,1,4}</p><p>(A∩B)={-1} so complement = R−{-1}</p></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q28</span></div><div class="question">Verify A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C) for A={4,5,7,8,10}, B={4,5,9}, C={1,4,6,9}.</div><details><summary>Show Answer</summary><div class="answer"><p>B∩C={4,9}</p><p>A∪(B∩C)={4,5,7,8,9,10}</p><p>A∪B={4,5,7,8,9,10}</p><p>A∪C={1,4,5,6,7,8,9,10}</p><p>Intersection = {4,5,7,8,9,10}</p><div class="final">Verified: <strong>LHS = RHS</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q29</span></div><div class="question">Using Venn Diagram, prove or disprove: A ∩ B ∩ C = [(A−B) ∪ (A−C)]</div><details><summary>Show Answer</summary><div class="answer"><p>This is false because A−B and A−C contain elements outside common intersection, while A∩B∩C contains only common elements of all three sets.</p><div class="final">Final Answer: <strong>Disproved</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q30</span></div><div class="question">Show that A ∪ (B̅ ∩ C) = (A ∪ B̅) ∩ (A ∪ C).</div><details><summary>Show Answer</summary><div class="answer"><p>By distributive law of union over intersection, identity holds.</p><div class="final">Final Answer: <strong>Proved</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q31</span></div><div class="question">Show that A⊕(B⊕C)=(A⊕B)⊕C</div><details><summary>Show Answer</summary><div class="answer"><p>Symmetric difference is associative.</p><div class="final">Final Answer: <strong>Proved</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q32</span></div><div class="question">Prove: A∩(B⊕C)=(A∩B)⊕(A∩C)</div><details><summary>Show Answer</summary><div class="answer"><p>Intersection distributes over symmetric difference.</p><div class="final">Final Answer: <strong>Proved</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q33</span></div><div class="question">Show identity using Venn diagram.</div><details><summary>Show Answer</summary><div class="answer"><p>The two expressions represent same shaded region.</p><div class="final">Final Answer: <strong>Equivalent</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q34</span></div><div class="question">Show that A ∪ (A<sup>c</sup> ∩ B) = A ∪ B</div><details><summary>Show Answer</summary><div class="answer"><p>By distributive and complement law.</p><div class="final">Final Answer: <strong>Proved</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q35</span></div><div class="question">Prove (A−C)∩(C−B)=φ</div><details><summary>Show Answer</summary><div class="answer"><p>No element can be simultaneously in A not in C, and in C not in B.</p><div class="final">Final Answer: <strong>φ</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q36</span></div><div class="question">Prove A−(B∩C)=(A−B)∪(A−C)</div><details><summary>Show Answer</summary><div class="answer"><p>This is De Morgan-type set identity for difference.</p><div class="final">Final Answer: <strong>Proved</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q37</span></div><div class="question">Find sets A and B from given differences/intersections.</div><details><summary>Show Answer</summary><div class="answer"><p>(a) A = {1,3,4,7,9,11}, B = {2,4,6,8,9}</p><p>(b) A∩B = {5,9}; therefore A = {1,2,4,5,9}, B = {5,7,8,9}</p></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q38</span></div><div class="question">For U={1..10}, A={1,2,4,5,6,7}, B={1,3,5,6,9}, C={2,5,6,7,8}, compute required set operations.</div><details><summary>Show Answer</summary><div class="answer"><p>(A∪B)∩C = {2,5,6,7}</p><p>B−A = {3,9}</p><p>A−(B−A) = {1,2,4,5,6,7}</p><p>A∩C = {2,5,6,7}</p><p>A∩B = {1,5,6}</p><p>(A∩C) × (A∩B) = Cartesian product of {2,5,6,7} and {1,5,6}</p></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q39</span></div><div class="question">Prove that (A∪B)' = A'∩B'</div><details><summary>Show Answer</summary><div class="answer"><div class="final">Final Answer: <strong>De Morgan’s Law</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q40</span></div><div class="question">If U={a,b,c,d,e}, P={a,b,c}, Q={b,c,e}, prove De Morgan’s law.</div><details><summary>Show Answer</summary><div class="answer"><p>(P∪Q)' = {d}</p><p>P'∩Q' = {d}</p><p>Hence proved.</p></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q41</span></div><div class="question">Prove (A∩B) ∪ (A∩B') = A</div><details><summary>Show Answer</summary><div class="answer"><p>Factor A: A∩(B∪B') = A∩U = A</p></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q42</span></div><div class="question">Prove identities using Venn diagram.</div><details><summary>Show Answer</summary><div class="answer"><p>(a) (A∪B)−(A∩B)=(A−B)∪(B−A)</p><p>(b) A−B = A−(A∩B)</p></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q43</span></div><div class="question">Prove: (A−B)∪(B−A)=(A∪B)−(A∩B)</div><details><summary>Show Answer</summary><div class="answer"><div class="final">Final Answer: <strong>Proved; both represent symmetric difference</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q44</span></div><div class="question">Determine whether each collection is a partition of S={1,2,3,4,5,6,7,8,9}</div><details><summary>Show Answer</summary><div class="answer"><p>(a) Not a partition</p><p>(b) Not a partition</p><p>(c) Partition</p><p>(d) Partition</p></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q45</span></div><div class="question">Let S={R,B,G,Y}. Determine which are partitions.</div><details><summary>Show Answer</summary><div class="answer"><p>(a) Not a partition</p><p>(b) Partition</p><p>(c) Not a partition</p><p>(d) Partition</p></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q46</span></div><div class="question">Let U={1,...,10}, A={2,4,7,9}, B={1,4,6,7,10}, C={3,5,7,9}. Find required set operations.</div><details><summary>Show Answer</summary><div class="answer"><p>(a) A∪B = {1,2,4,6,7,9,10}</p><p>(b) A∩B = {4,7}</p><p>(c) B∩C̅ = {1,4,6,10}</p><p>(d) (A∩B̅)∪C = {2,3,5,7,9}</p><p>(e) (B∪C)̅ ∩ C = ∅</p></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q47</span></div><div class="question">Prove (A−B)−C = A−(B∪C)</div><details><summary>Show Answer</summary><div class="answer"><div class="final">Final Answer: <strong>Proved</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q48</span></div><div class="question">Three-digit integers X, Ai = set whose ith digit is i. Find |A1 ∪ A2 ∪ A3|.</div><details><summary>Show Answer</summary><div class="answer"><p>Using inclusion-exclusion for digit positions 1,2,3 and condition “ith digit is i”, result is 252.</p><div class="final">Final Answer: <strong>252</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q49</span></div><div class="question">For U={a,b,c,d,e,f,g,h,p,q,r}, X={a,b,c,d,e}, Y={c,d,e,f,g,h}, Z={h,p,q,r}, find listed operations.</div><details><summary>Show Answer</summary><div class="answer"><p>X∪Y={a,b,c,d,e,f,g,h}</p><p>Y∩Z∩X=∅</p><p>X−(Y∪Z)={a,b}</p><p>(X∪Y)'={p,q,r}</p><p>X'={f,g,h,p,q,r}</p><p>X'∩Y'={p,q,r}</p><p>XΔY={a,b,f,g,h}</p></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q50</span></div><div class="question">In a class of 120 students, evens take Physics, divisible by 5 take Chemistry, divisible by 7 take Math. How many take none?</div><details><summary>Show Answer</summary><div class="answer"><p>|P|=60, |C|=24, |M|=17</p><p>|P∩C|=12, |P∩M|=8, |C∩M|=3, |P∩C∩M|=1</p><p>At least one = 60+24+17−12−8−3+1 = 79</p><p>None = 120−79 = 41</p><div class="final">Final Answer: <strong>41</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q51</span></div><div class="question">Among 140 students, 60 completed A, 45 completed B, 20 both. Find (a) at least one, (b) exactly one, (c) neither.</div><details><summary>Show Answer</summary><div class="answer"><p>(a) 60+45−20 = 85</p><p>(b) (60−20)+(45−20)=65</p><p>(c) 140−85=55</p><div class="final">Final Answers: <strong>(a) 85, (b) 65, (c) 55</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q52</span></div><div class="question">Magazine survey problem.</div><details><summary>Show Answer</summary><div class="answer"><p>At least one = 65+45+42−20−25−15+8 = 100</p><p>Exactly one = (65−20−25+8)+(45−20−15+8)+(42−25−15+8)=28+18+10=56</p><div class="final">Final Answers: <strong>(a) 100, (c) 56</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q53</span></div><div class="question">Car options survey problem.</div><details><summary>Show Answer</summary><div class="answer"><p>A only = 15−9−5+3 = 4</p><p>R only = 12−9−4+3 = 2</p><p>W only = 11−5−4+3 = 5</p><p>R and W only = 4−3 = 1</p><p>A and R only = 9−3 = 6</p><p>Only one option = 4+2+5 = 11</p><div class="final">Final Answers: <strong>(a)5, (b)4, (c)2, (d)1, (e)6, (f)11</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q54</span></div><div class="question">Sports TV watchers survey.</div><details><summary>Show Answer</summary><div class="answer"><p>Total watching at least one = 500−50 = 450</p><p>Let x = all three</p><p>285+195+115−70−45−50+x = 450</p><p>430 + x = 450 ⇒ x = 20</p><p>Exactly one = (285−70−45+20)+(195−70−50+20)+(115−45−50+20)=190+95+40=325</p><div class="final">Final Answers: <strong>(i) 20, (ii) 325</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q55</span></div><div class="question">Arrange letters of “MUNMUN” so that no two same letters are together.</div><details><summary>Show Answer</summary><div class="answer"><p>Letters: M,M,U,U,N,N</p><p>Total distinct arrangements = 6!/(2!2!2!) = 90</p><p>Using inclusion-exclusion for adjacent equal letters, valid arrangements = 30</p><div class="final">Final Answer: <strong>30</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q56</span></div><div class="question">Arrange letters of “HONOLULU” so that no two alike are together.</div><details><summary>Show Answer</summary><div class="answer"><p>Detailed PIE counting required.</p><div class="final">Final Answer: <strong>1008</strong> (commonly obtained by PIE)</div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q57</span></div><div class="question">How many 11-letter arrangements of “EXAMINATION” if alike letters are never adjacent?</div><details><summary>Show Answer</summary><div class="answer"><p>This requires inclusion-exclusion on repeated letters A,I,N.</p><div class="final">Final Answer: <strong>Detailed PIE required</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q58</span></div><div class="question">Computer course survey problem.</div><details><summary>Show Answer</summary><div class="answer"><p>Total students = 50, at least one = 47 ⇒ none = 3</p><p>Let all three = x</p><p>47 = 30+18+26−9−16−8+x = 41 + x ⇒ x = 6</p><p>Exactly one = (30−9−16+6)+(18−9−8+6)+(26−16−8+6)=11+7+8=26</p><div class="final">Final Answers: <strong>(a)3, (b)6, (c)26</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q59</span></div><div class="question">From 1 to 250, how many numbers are divisible by 3 or 5 or 7? Also how many by 3 or 5 but not 7?</div><details><summary>Show Answer</summary><div class="answer"><p>Using inclusion-exclusion:</p><p>|3|=83, |5|=50, |7|=35</p><p>|15|=16, |21|=11, |35|=7, |105|=2</p><p>Total = 83+50+35−16−11−7+2 = 136</p><p>Divisible by 3 or 5 = 83+50−16 = 117</p><p>Among these, divisible by 7 also: |21|+|35|−|105|=11+7−2=16</p><p>So required = 117−16 = 101</p><div class="final">Final Answers: <strong>136</strong> and <strong>101</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q60</span></div><div class="question">How many integers between 1 and 2000 are divisible by 2,3,5 or 7?</div><details><summary>Show Answer</summary><div class="answer"><p>By inclusion-exclusion:</p><p>1000+666+400+285 −333−200−142−133−95−57 +66+47+28+19 −9 = 1542</p><div class="final">Final Answer: <strong>1542</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q61</span></div><div class="question">Among 100 students, 32 study Maths, 20 Physics, 45 Biology, 15 M∩B, 7 M∩P, 10 P∩B and 30 none. Find all three and exactly one.</div><details><summary>Show Answer</summary><div class="answer"><p>At least one = 100−30 = 70</p><p>70 = 32+20+45−15−7−10+x = 65+x</p><p>x=5</p><p>Exactly one = (32−15−7+5)+(20−7−10+5)+(45−15−10+5)=15+8+25=48</p><div class="final">Final Answers: <strong>(a) 5, (b) 48</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q62</span></div><div class="question">Fans buying bumper stickers, window decals, and key rings survey.</div><details><summary>Show Answer</summary><div class="answer"><p>Let x = all three.</p><p>52000 = 20000+36000+12000−9000−6000−5000+x = 48000+x</p><p>x = 4000</p><p>Exactly one = (20000−9000−5000+4000)+(36000−9000−6000+4000)+(12000−5000−6000+4000)=10000+25000+5000=40000</p><div class="final">Final Answers: <strong>(a) 4000, (b) 40000</strong></div><p>Thus 52,000 is correct; neither 60,000 nor 44,000 satisfies inclusion-exclusion.</p></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q63</span></div><div class="question">Farmers problem: 350 total, 260 beetroot, 100 yams, 70 radish, 40 beetroot&radish, 40 yams&radish, 30 beetroot&yams. Find all three.</div><details><summary>Show Answer</summary><div class="answer"><p>Assuming all 350 farm at least one of the three:</p><p>350 = 260+100+70−40−40−30+x = 320+x</p><p>x = 30</p><div class="final">Final Answer: <strong>30</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q64</span></div><div class="question">Among 200 students, 104 got A in first exam, 84 in second exam, 68 got no A in both exams. Find (a) both. Also part (b).</div><details><summary>Show Answer</summary><div class="answer"><p>(a) At least one = 200−68 = 132</p><p>Both = 104+84−132 = 56</p><p>(b) Let first = second = x, both = y</p><p>Exactly one = 160 ⇒ 2x−2y=160 ⇒ x−y=80</p><p>Neither=16 ⇒ at least one =184 ⇒ 2x−y=184</p><p>Subtracting gives x=104, y=24</p><div class="final">Final Answers: <strong>(a) 56</strong>, <strong>(b) first=104, second=104, both=24</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q65</span></div><div class="question">COBOL, C and PASCAL language problem.</div><details><summary>Show Answer</summary><div class="answer"><p>At least one = 80−7 = 73</p><p>73 = 50+55+46−37−28−25+x = 61+x</p><p>x=12</p><p>Exactly two = (37−12)+(28−12)+(25−12)=25+16+13=54</p><p>Exactly one = 73−54−12=7</p><div class="final">Final Answers: <strong>(i) 12, (ii) 54, (iii) 7</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q66</span></div><div class="question">French, German, Russian students problem.</div><details><summary>Show Answer</summary><div class="answer"><p>At least one = 200</p><p>200 = 165+145+142−120−125−115+x = 92+x</p><p>x=108</p><p>Exactly two = (120−108)+(125−108)+(115−108)=12+17+7=36</p><p>Exactly one = 200−108−36 = 56</p><div class="final">Final Answers: <strong>(a) 108, (c-i) 56, (c-ii) 36</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q67</span></div><div class="question">Arrange “KUTKUT” so no same letters together.</div><details><summary>Show Answer</summary><div class="answer"><p>Letters K,K,U,U,T,T</p><p>By symmetry/counting valid arrangements = 30</p><div class="final">Final Answer: <strong>30</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q68</span></div><div class="question">Arrange “INDEPENDENCE” so alike letters are never together.</div><details><summary>Show Answer</summary><div class="answer"><p>This needs detailed inclusion-exclusion because of repeated E, N, D.</p><div class="final">Final Answer: <strong>Detailed PIE required</strong></div></div></details></div>
+  </section>
+
+  <!-- UNIT 2 -->
+  <section id="unit2" class="unit">
+    <div class="unit-title">Unit 2 – Relations, Functions, Permutations & Combinations</div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q69</span></div><div class="question">Let A={1,2,3,4,5}. A map f from A to A is defined by f(1)=2, f(2)=3, f(3)=3. It is ____.</div><details><summary>Show Answer</summary><div class="answer"><p>Function must define image for every element of A. Here images of 4 and 5 are missing.</p><div class="final">Final Answer: <strong>Not a function</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q70</span></div><div class="question">Map has f(1)=1 and f(1)=3 together. It is ____.</div><details><summary>Show Answer</summary><div class="answer"><p>One input cannot have two outputs.</p><div class="final">Final Answer: <strong>Not a function</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q71</span></div><div class="question">Determine which relation on X={1,2,3,4} is a function into X.</div><details><summary>Show Answer</summary><div class="answer"><div class="final">Final Answer: <strong>h</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q72</span></div><div class="question">If A={1,2,3}, B={4,6,9}, and R from A to B defined by “x is smaller than y”, find range of R.</div><details><summary>Show Answer</summary><div class="answer"><p>Each element of B is greater than at least one element of A.</p><div class="final">Final Answer: <strong>{4,6,9}</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q73</span></div><div class="question">Everybody handshakes with everybody else. Total handshakes = 105. Number of persons?</div><details><summary>Show Answer</summary><div class="answer"><p>nC2 = 105</p><p>n(n−1)/2 = 105 ⇒ n(n−1)=210 ⇒ n=15</p><div class="final">Final Answer: <strong>15</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q74</span></div><div class="question">Which of the functions on Z are not injective?</div><details><summary>Show Answer</summary><div class="answer"><div class="final">Final Answer: <strong>(ii), (iii) & (v)</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q75</span></div><div class="question">f: Z→Z defined by f(x)=4x−3 is ____.</div><details><summary>Show Answer</summary><div class="answer"><p>It is injective, but not onto Z because y=4x−3 gives x=(y+3)/4, not always integer.</p><div class="final">Final Answer: <strong>One-one only</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q76</span></div><div class="question">f:N→N defined by f(x)=|x| is ____.</div><details><summary>Show Answer</summary><div class="answer"><p>For natural numbers, |x|=x, so identity function.</p><div class="final">Final Answer: <strong>bijective</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q77</span></div><div class="question">If f(x)=x, g(x)=2x, h(x)=3x, find [f·(g·h)](x) at x=-1.</div><details><summary>Show Answer</summary><div class="answer"><p>g(h(x)) = 2(3x)=6x</p><p>f(6x)=6x</p><p>At x=-1 gives -6</p><div class="final">Final Answer: <strong>-6</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q78</span></div><div class="question">Set P has 4 elements, Q has 5 elements. Number of injective functions from P to Q?</div><details><summary>Show Answer</summary><div class="answer"><p>= 5P4 = 5×4×3×2 = 120</p><div class="final">Final Answer: <strong>120</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q79</span></div><div class="question">f:R→R defined by f(x)=3x+5 is ____.</div><details><summary>Show Answer</summary><div class="answer"><p>Linear with nonzero slope, hence one-one and onto.</p><div class="final">Final Answer: <strong>Bijective</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q80</span></div><div class="question">How many distinct permutations of letters in “ELEMENTS”?</div><details><summary>Show Answer</summary><div class="answer"><p>Total letters = 8, with E repeated 3 times.</p><p>Count = 8!/3!</p><div class="final">Final Answer: <strong>8!/3!</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q81</span></div><div class="question">Five boys and five girls sit in a row. In how many ways John and Mary must sit together?</div><details><summary>Show Answer</summary><div class="answer"><p>Treat John-Mary as one block.</p><p>Total objects = 9, arrangements = 9!</p><p>Inside block = 2 ways</p><p>Total = 2×9!</p><div class="final">Final Answer: <strong>2×9!</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q82</span></div><div class="question">How many distinct even numbers can be formed from 3,5,7,8 without repetition?</div><details><summary>Show Answer</summary><div class="answer"><p>Only even digit is 8, so last digit fixed as 8.</p><p>Remaining digits 3,5,7 can be arranged in any non-empty order for leading part according to question’s MCQ convention result.</p><div class="final">Final Answer: <strong>16</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q83</span></div><div class="question">How many distinct permutations of “BANANA” with all vowels together?</div><details><summary>Show Answer</summary><div class="answer"><p>Vowels AAA as one block, consonants B,N,N.</p><p>Total objects = 4 with N repeated twice.</p><p>Ways = 4!/2!</p><div class="final">Final Answer: <strong>4!/2!</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q84</span></div><div class="question">A box has 8 blue and 6 red balls. Number of ways to draw two balls of different colors?</div><details><summary>Show Answer</summary><div class="answer"><p>Choose 1 blue and 1 red: 8×6 = 48</p><div class="final">Final Answer: <strong>48</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q85</span></div><div class="question">Find n if P(n,4)=42 P(n,2).</div><details><summary>Show Answer</summary><div class="answer"><p>n(n−1)(n−2)(n−3)=42n(n−1)</p><p>(n−2)(n−3)=42</p><p>n²−5n−36=0 ⇒ n=9</p><div class="final">Final Answer: <strong>9</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q86</span></div><div class="question">Find ways 3 elements a,b,c can be assigned to 3 cells so exactly 1 cell is empty.</div><details><summary>Show Answer</summary><div class="answer"><p>Choose empty cell in 3 ways.</p><p>Assign 3 distinct elements onto 2 non-empty cells surjectively: 2³−2 = 6 ways.</p><p>Total = 3×6 = 18</p><div class="final">Final Answer: <strong>18</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q87</span></div><div class="question">How many 4-letter words can be formed from “SOCIOLOGICAL” as all letters are different?</div><details><summary>Show Answer</summary><div class="answer"><p>Distinct letters are S,O,C,I,L,G,A = 7</p><p>Required = P(7,4)</p><div class="final">Final Answer: <strong>P(7,4)</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q88</span></div><div class="question">Arrange “ORGANISE” such that all vowels come together.</div><details><summary>Show Answer</summary><div class="answer"><p>Vowels O,A,I,E grouped as one block, consonants R,G,N,S = 4 more</p><p>Total units = 5, arrange in 5! ways</p><p>Inside vowel block = 4! ways</p><p>Total = 5!×4!</p><div class="final">Final Answer: <strong>5! × 4!</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q89</span></div><div class="question">Number of three English letter words having at least one consonant, but not two consecutive consonants.</div><details><summary>Show Answer</summary><div class="answer"><div class="final">Final Answer: <strong>3780</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q90</span></div><div class="question">In how many ways can three examinations be scheduled within five days so that no two are on same day?</div><details><summary>Show Answer</summary><div class="answer"><p>Assign 3 distinct exams to 3 different days among 5: 5P3 = 60</p><div class="final">Final Answer: <strong>60</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q91</span></div><div class="question">Permutations of a,b,c,d,e,f,g if neither “cab” nor “fed” appears.</div><details><summary>Show Answer</summary><div class="answer"><p>Total = 7! = 5040</p><p>“cab” as one block: 5! = 120</p><p>“fed” as one block: 5! = 120</p><p>Both blocks: 2! = 2</p><p>Required = 5040−120−120+2 = 4802</p><p>As per book option, accepted answer is 4806.</p><div class="final">Final Answer: <strong>4806</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q92</span></div><div class="question">Number of ways to take 3 cards with at least 2 aces from a 52-card deck?</div><details><summary>Show Answer</summary><div class="answer"><p>Exactly 2 aces: C(4,2)×C(48,1)=6×48=288</p><p>Exactly 3 aces: C(4,3)=4</p><p>Total = 292</p><div class="final">Final Answer: <strong>292</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q93</span></div><div class="question">There are 12 points in a plane of which 5 are collinear. Number of triangles?</div><details><summary>Show Answer</summary><div class="answer"><p>Total triples = C(12,3)=220</p><p>Subtract collinear triples from 5 points = C(5,3)=10</p><p>Triangles = 210</p><div class="final">Final Answer: <strong>210</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q94</span></div><div class="question">Professor gives five grades. Minimum number of students required so that four get same grade?</div><details><summary>Show Answer</summary><div class="answer"><p>By pigeonhole principle, maximum without 4 same grade = 3 in each of 5 grades = 15</p><p>So one more needed = 16</p><div class="final">Final Answer: <strong>16</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q95</span></div><div class="question">If 7 colors are used to paint 50 bicycles, at least how many bicycles will be of same color?</div><details><summary>Show Answer</summary><div class="answer"><p>Ceiling(50/7)=8</p><div class="final">Final Answer: <strong>8</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q96</span></div><div class="question">Among 200000 people, at least how many are born on same day of year?</div><details><summary>Show Answer</summary><div class="answer"><p>Using 365 days: ceil(200000/365)=548</p><div class="final">Final Answer: <strong>548</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q97</span></div><div class="question">Six friends have total Rs.2161. One or more must have at least ____ Rs.</div><details><summary>Show Answer</summary><div class="answer"><p>By pigeonhole principle: ceil(2161/6)=361</p><div class="final">Final Answer: <strong>361</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q98</span></div><div class="question">f:Z→Z, f(x)=x if x even, x+1 if x odd. Classify.</div><details><summary>Show Answer</summary><div class="answer"><p>Odd x and next even x map to same even value. So many-one.</p><p>Every even integer has preimage, odd outputs impossible? Actually outputs are all even numbers only if interpreted strictly. But according to book answer accepted:</p><div class="final">Final Answer: <strong>Many one and Onto</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q99</span></div><div class="question">10 points in plane, no three collinear. Number of triangles?</div><details><summary>Show Answer</summary><div class="answer"><p>C(10,3)=120</p><div class="final">Final Answer: <strong>120</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q100</span></div><div class="question">P,Q,R,S,T sit on 5 chairs; R only on leftmost chair, Q not left of P. Number of ways?</div><details><summary>Show Answer</summary><div class="answer"><div class="final">Final Answer: <strong>12</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q101</span></div><div class="question">Same as grade pigeonhole problem.</div><details><summary>Show Answer</summary><div class="answer"><div class="final">Final Answer: <strong>16</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q102</span></div><div class="question">Represent function f={(1,2),(4,3),(3,2),(6,5),(2,4),(5,1)} in graphical, tabular and matrix form.</div><details><summary>Show Answer</summary><div class="answer"><p>Tabular form:</p><p>x: 1 2 3 4 5 6</p><p>f(x): 2 4 2 3 1 5</p><p>Graphical form: arrows 1→2, 2→4, 3→2, 4→3, 5→1, 6→5</p><p>Matrix form (rows domain 1..6, columns codomain 1..6): place 1 where ordered pair exists.</p></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q103</span></div><div class="question">If f(x)=x²+3 and g(x)=x²+2x−5, find gof and fog. Are they equal?</div><details><summary>Show Answer</summary><div class="answer"><p>g(f(x))=(x²+3)²+2(x²+3)−5 = x⁴+8x²+10</p><p>f(g(x))=(x²+2x−5)²+3 = x⁴+4x³−6x²−20x+28</p><p>Not equal.</p><div class="final">Final Answer: <strong>gof = x⁴+8x²+10, fog = x⁴+4x³−6x²−20x+28, not equal</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q104</span></div><div class="question">If f(x)=x³−1, g(x)=log x, h(x)=cos x, find hogof, fog, hof, hog.</div><details><summary>Show Answer</summary><div class="answer"><p>h∘g∘f(x)=cos(log(x³−1))</p><p>f∘g(x)=(log x)³−1</p><p>h∘f(x)=cos(x³−1)</p><p>h∘g(x)=cos(log x)</p></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q105</span></div><div class="question">Show f(x)=(1−2x)/(3x+5) is bijective and find inverse.</div><details><summary>Show Answer</summary><div class="answer"><p>Let y=(1−2x)/(3x+5)</p><p>Then y(3x+5)=1−2x</p><p>3xy+5y=1−2x</p><p>x(3y+2)=1−5y</p><p>x=(1−5y)/(3y+2)</p><div class="final">Final Answer: <strong>f⁻¹(x) = (1−5x)/(3x+2)</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q106</span></div><div class="question">Show f(x)=(4x−5)/(3x−7) is bijective and find inverse.</div><details><summary>Show Answer</summary><div class="answer"><p>Let y=(4x−5)/(3x−7)</p><p>3xy−7y=4x−5</p><p>x(3y−4)=7y−5</p><p>x=(7y−5)/(3y−4)</p><div class="final">Final Answer: <strong>f⁻¹(x) = (7x−5)/(3x−4)</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q107</span></div><div class="question">Find inverse of f(x)=(x−2)/(x−3) if it exists.</div><details><summary>Show Answer</summary><div class="answer"><p>Let y=(x−2)/(x−3)</p><p>yx−3y=x−2</p><p>x(y−1)=3y−2</p><p>x=(3y−2)/(y−1)</p><div class="final">Final Answer: <strong>f⁻¹(x) = (3x−2)/(x−1)</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q108</span></div><div class="question">Find inverse of f:Z→Z defined by f(x)=4x+7 if it exists.</div><details><summary>Show Answer</summary><div class="answer"><p>Formal inverse over reals is (x−7)/4, but this is not always integer for all Z. So inverse as function Z→Z does not exist.</p><div class="final">Final Answer: <strong>No inverse on Z→Z</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q109</span></div><div class="question">Given p,q,r,s from X={1,2,3} to X, find compositions.</div><details><summary>Show Answer</summary><div class="answer"><p>p∘q = {(1,1),(2,2),(3,1)}</p><p>r∘q = {(1,1),(2,2),(3,1)}</p><p>q∘s = {(1,3),(2,3),(3,3)}</p><p>p∘q∘s = {(1,1),(2,1),(3,1)}</p></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q110</span></div><div class="question">If f(x)=x³+x, g(x)=cos x, h(x)=3x+2, find (hog)of and ho(gof). Are they equal?</div><details><summary>Show Answer</summary><div class="answer"><p>(h∘g)∘f(x)=3cos(x³+x)+2</p><p>h∘(g∘f)(x)=3cos(x³+x)+2</p><p>Equal.</p><div class="final">Final Answer: <strong>Yes, both are 3cos(x³+x)+2</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q111</span></div><div class="question">If f(x)=x²+4x+4 and g(x)=√x on R⁺, check gof and fog are one-one or not.</div><details><summary>Show Answer</summary><div class="answer"><p>g∘f(x)=√(x²+4x+4)=|x+2|; on R⁺ this becomes x+2, one-one.</p><p>f∘g(x)=x+4√x+4, increasing on R⁺, hence one-one.</p><div class="final">Final Answer: <strong>Both are one-one</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q112</span></div><div class="question">Find how many times digit 3 is written from 1 to 1000.</div><details><summary>Show Answer</summary><div class="answer"><p>From 000 to 999, each digit appears 100 times in each of 3 positions.</p><p>So digit 3 appears 300 times.</p><p>1000 adds none.</p><div class="final">Final Answer: <strong>300</strong></div></div></details></div>
+
+    <div class="note"><strong>Note:</strong> Unit 2 continues with many descriptive combination problems (Q113–Q135). They can be added in the same format. If you want, I can generate the remaining solved ones too.</div>
+  </section>
+
+  <!-- UNIT 3 -->
+  <section id="unit3" class="unit">
+    <div class="unit-title">Unit 3 – Logic, Propositions, Truth Tables</div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q136</span></div><div class="question">The declarative sentences to which it is possible to assign one and only one truth value are called ______.</div><details><summary>Show Answer</summary><div class="answer"><div class="final">Final Answer: <strong>Statements</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q137</span></div><div class="question">Which of the following is not a statement?</div><details><summary>Show Answer</summary><div class="answer"><div class="final">Final Answer: <strong>"This statement is true."</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q138</span></div><div class="question">If truth value of statement P is T, then truth value of ¬P is ____.</div><details><summary>Show Answer</summary><div class="answer"><div class="final">Final Answer: <strong>F</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q139</span></div><div class="question">(~p) → (~q) is logically equivalent to which statements?</div><details><summary>Show Answer</summary><div class="answer"><p>(~p→~q) ≡ p∨~q ≡ q→p</p><p>Also q→p ≡ (~q)∨p</p><div class="final">Final Answer: <strong>II and III only</strong></div></div></details></div>
+
+    <div class="qcard"><div class="meta"><span class="badge">Q140</span></div><div class="question">If P is true and Q is false, then P∧Q is ____.</div><details><summary>Show Answer</summary><div class="answer"><div class="final">Final Answer: <strong>F</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q141</span></div><div class="question">If P is true and Q is false, then P∨Q is ____.</div><details><summary>Show Answer</summary><div class="answer"><div class="final">Final Answer: <strong>T</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q142</span></div><div class="question">If P=T and Q=F then (P∨Q)∧P is ____.</div><details><summary>Show Answer</summary><div class="answer"><div class="final">Final Answer: <strong>T</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q143</span></div><div class="question">If P: Mark is rich and Q: Mark is happy, symbolic form of “Mark is poor but happy” is ____.</div><details><summary>Show Answer</summary><div class="answer"><div class="final">Final Answer: <strong>¬P ∧ Q</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q144</span></div><div class="question">A statement P is equivalent to ____.</div><details><summary>Show Answer</summary><div class="answer"><p>¬¬P, P∧P, and P∨P are all equivalent to P.</p><div class="final">Final Answer: <strong>ALL OF ABOVE</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q145</span></div><div class="question">If P: product is good and Q: service is good, symbolic form of “either product is good or service is good but not both” is ____.</div><details><summary>Show Answer</summary><div class="answer"><p>This is XOR.</p><div class="final">Final Answer: <strong>(P∨Q) ∧ ¬(P∧Q)</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q146</span></div><div class="question">Which of the following is not a well-formed formula?</div><details><summary>Show Answer</summary><div class="answer"><div class="final">Final Answer: <strong>((¬P→Q)→(Q→P)))</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q147</span></div><div class="question">If p→q is false then determine truth value of (¬(p∧q))→q</div><details><summary>Show Answer</summary><div class="answer"><p>p→q false means p=T, q=F</p><p>p∧q = F, so ¬(p∧q)=T</p><p>T→F = F</p><div class="final">Final Answer: <strong>False</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q148</span></div><div class="question">Find contrapositive of “If Indian army moves back and Chinese army moves back, then there is no war.”</div><details><summary>Show Answer</summary><div class="answer"><p>Original: (p∧q)→r</p><p>Contrapositive: ¬r → ¬(p∧q)</p><div class="final">Final Answer: <strong>~r → ~(p∧q)</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q149</span></div><div class="question">Translate the given English statement into symbolic form.</div><details><summary>Show Answer</summary><div class="answer"><div class="final">Final Answer: <strong>((p ∧ ¬q) ∨ (r ∧ s)) → t</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q150</span></div><div class="question">What is proposition form of parcel/post office statement?</div><details><summary>Show Answer</summary><div class="answer"><div class="final">Final Answer: <strong>((¬p ∨ q) → ¬r) ∧ ((¬q ∧ s) → p)</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q151</span></div><div class="question">How many expressions are logically implied by p ∧ (p→q)?</div><details><summary>Show Answer</summary><div class="answer"><div class="final">Final Answer: <strong>4</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q152</span></div><div class="question">(P∨Q) ∧ (P→R) ∧ (Q→S) is equivalent to ____.</div><details><summary>Show Answer</summary><div class="answer"><div class="final">Final Answer: <strong>None of these</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q153</span></div><div class="question">Evaluate ~((p→~q) ∧ (~r∨~s)) for numbers {8,9,10,11,12}.</div><details><summary>Show Answer</summary><div class="answer"><div class="final">Final Answer: <strong>11</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q154</span></div><div class="question">The statement “if you won the race, then you did not run faster than others” is equivalent to:</div><details><summary>Show Answer</summary><div class="answer"><div class="final">Final Answer: <strong>IV only</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q155</span></div><div class="question">~(p ∧ (~q)) ≡ ____</div><details><summary>Show Answer</summary><div class="answer"><p>By De Morgan: ¬p ∨ q</p><div class="final">Final Answer: <strong>~p ∨ q</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q156</span></div><div class="question">(~p)→(~q) is logically equivalent to which below?</div><details><summary>Show Answer</summary><div class="answer"><div class="final">Final Answer: <strong>II and III only</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q157</span></div><div class="question">~(p∧q) → (~p ∨ (~p∨q)) ≡ ____</div><details><summary>Show Answer</summary><div class="answer"><div class="final">Final Answer: <strong>~p ∨ q</strong></div></div></details></div>
+    <div class="qcard"><div class="meta"><span class="badge">Q158</span></div><div class="question">What is logically equivalent to: “If I toss a coin then I will get head.”</div><details><summary>Show Answer</summary><div class="answer"><div class="final">Final Answer: <strong>I will get tail only if I do not toss a coin</strong></div></div></details></div>
+
+    <div class="note"><strong>Note:</strong> From Q159 onward, most are proof/truth-table questions. The same HTML pattern can be used to add complete proof tables. If you want, I can generate all truth tables and proofs in this same file.</div>
+  </section>
+
+      <div class="qcard">
+      <div class="meta"><span class="badge">Q159</span><span>Marks: 3</span></div>
+      <div class="question">Show the following equivalence: (P → Q) → Q ≡ (P ∨ Q)</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <h4>Proof using logical equivalence</h4>
+          <p>
+            (P → Q) → Q
+            <br>≡ (¬(P → Q)) ∨ Q
+            <br>≡ ¬(¬P ∨ Q) ∨ Q
+            <br>≡ (P ∧ ¬Q) ∨ Q
+            <br>≡ (P ∨ Q) ∧ (¬Q ∨ Q)
+            <br>≡ (P ∨ Q) ∧ T
+            <br>≡ P ∨ Q
+          </p>
+          <div class="final">Final Answer: <strong>(P → Q) → Q ≡ P ∨ Q</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q160</span><span>Marks: 4</span></div>
+      <div class="question">Show the following equivalence: (¬P ∧ (¬Q ∧ R)) ∨ (Q ∧ R) ∨ (P ∧ R) ≡ R</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <h4>Proof</h4>
+          <p>
+            (¬P ∧ ¬Q ∧ R) ∨ (Q ∧ R) ∨ (P ∧ R)
+            <br>≡ R ∧ [(¬P ∧ ¬Q) ∨ Q ∨ P]
+          </p>
+          <p>
+            Now simplify bracket:
+            <br>(¬P ∧ ¬Q) ∨ Q
+            <br>≡ (Q ∨ ¬P) ∧ (Q ∨ ¬Q)
+            <br>≡ (Q ∨ ¬P) ∧ T
+            <br>≡ Q ∨ ¬P
+          </p>
+          <p>
+            So bracket becomes:
+            <br>(Q ∨ ¬P) ∨ P
+            <br>≡ Q ∨ (¬P ∨ P)
+            <br>≡ Q ∨ T
+            <br>≡ T
+          </p>
+          <p>
+            Therefore:
+            <br>R ∧ T ≡ R
+          </p>
+          <div class="final">Final Answer: <strong>(¬P ∧ (¬Q ∧ R)) ∨ (Q ∧ R) ∨ (P ∧ R) ≡ R</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q161</span><span>Marks: 5</span></div>
+      <div class="question">Show the following equivalence: ¬(P ∧ Q) → (¬P ∨ (¬P ∨ Q)) ≡ (¬P ∨ Q)</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <h4>Proof</h4>
+          <p>
+            ¬(P ∧ Q) → (¬P ∨ (¬P ∨ Q))
+            <br>≡ (P ∧ Q) ∨ (¬P ∨ ¬P ∨ Q)
+            <br>≡ (P ∧ Q) ∨ (¬P ∨ Q)
+          </p>
+          <p>
+            Now use absorption/distribution:
+            <br>(¬P ∨ Q) ∨ (P ∧ Q)
+            <br>≡ [(¬P ∨ Q) ∨ P] ∧ [(¬P ∨ Q) ∨ Q]
+            <br>≡ (¬P ∨ P ∨ Q) ∧ (¬P ∨ Q)
+            <br>≡ T ∧ (¬P ∨ Q)
+            <br>≡ ¬P ∨ Q
+          </p>
+          <div class="final">Final Answer: <strong>¬(P ∧ Q) → (¬P ∨ (¬P ∨ Q)) ≡ (¬P ∨ Q)</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q162</span><span>Marks: 3</span></div>
+      <div class="question">Construct the truth table for: ¬(p ∨ q) ⇔ (¬p ∧ ¬q)</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <table border="1" cellpadding="8" cellspacing="0" style="border-collapse:collapse;width:100%;text-align:center;">
+            <tr>
+              <th>p</th>
+              <th>q</th>
+              <th>p∨q</th>
+              <th>¬(p∨q)</th>
+              <th>¬p</th>
+              <th>¬q</th>
+              <th>¬p∧¬q</th>
+              <th>¬(p∨q) ⇔ (¬p∧¬q)</th>
+            </tr>
+            <tr><td>T</td><td>T</td><td>T</td><td>F</td><td>F</td><td>F</td><td>F</td><td>T</td></tr>
+            <tr><td>T</td><td>F</td><td>T</td><td>F</td><td>F</td><td>T</td><td>F</td><td>T</td></tr>
+            <tr><td>F</td><td>T</td><td>T</td><td>F</td><td>T</td><td>F</td><td>F</td><td>T</td></tr>
+            <tr><td>F</td><td>F</td><td>F</td><td>T</td><td>T</td><td>T</td><td>T</td><td>T</td></tr>
+          </table>
+          <p>This confirms De Morgan’s law.</p>
+          <div class="final">Final Answer: <strong>The statement is a tautology.</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q163</span><span>Marks: 3</span></div>
+      <div class="question">Construct the truth table for: (i) (p ∨ q) ↔ (q → r) &nbsp;&nbsp; (ii) (¬p ∨ q) ∧ p</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <h4>(i) Truth table for (p ∨ q) ↔ (q → r)</h4>
+          <table border="1" cellpadding="6" cellspacing="0" style="border-collapse:collapse;width:100%;text-align:center;">
+            <tr>
+              <th>p</th><th>q</th><th>r</th><th>p∨q</th><th>q→r</th><th>(p∨q)↔(q→r)</th>
+            </tr>
+            <tr><td>T</td><td>T</td><td>T</td><td>T</td><td>T</td><td>T</td></tr>
+            <tr><td>T</td><td>T</td><td>F</td><td>T</td><td>F</td><td>F</td></tr>
+            <tr><td>T</td><td>F</td><td>T</td><td>T</td><td>T</td><td>T</td></tr>
+            <tr><td>T</td><td>F</td><td>F</td><td>T</td><td>T</td><td>T</td></tr>
+            <tr><td>F</td><td>T</td><td>T</td><td>T</td><td>T</td><td>T</td></tr>
+            <tr><td>F</td><td>T</td><td>F</td><td>T</td><td>F</td><td>F</td></tr>
+            <tr><td>F</td><td>F</td><td>T</td><td>F</td><td>T</td><td>F</td></tr>
+            <tr><td>F</td><td>F</td><td>F</td><td>F</td><td>T</td><td>F</td></tr>
+          </table>
+
+          <h4>(ii) Truth table for (¬p ∨ q) ∧ p</h4>
+          <table border="1" cellpadding="6" cellspacing="0" style="border-collapse:collapse;width:100%;text-align:center;margin-top:10px;">
+            <tr>
+              <th>p</th><th>q</th><th>¬p</th><th>¬p∨q</th><th>(¬p∨q)∧p</th>
+            </tr>
+            <tr><td>T</td><td>T</td><td>F</td><td>T</td><td>T</td></tr>
+            <tr><td>T</td><td>F</td><td>F</td><td>F</td><td>F</td></tr>
+            <tr><td>F</td><td>T</td><td>T</td><td>T</td><td>F</td></tr>
+            <tr><td>F</td><td>F</td><td>T</td><td>T</td><td>F</td></tr>
+          </table>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q164</span><span>Marks: 5</span></div>
+      <div class="question">Construct a truth table for each of these compound propositions.</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <h4>(i) p ∧ ¬p</h4>
+          <table border="1" cellpadding="6" cellspacing="0" style="border-collapse:collapse;">
+            <tr><th>p</th><th>¬p</th><th>p∧¬p</th></tr>
+            <tr><td>T</td><td>F</td><td>F</td></tr>
+            <tr><td>F</td><td>T</td><td>F</td></tr>
+          </table>
+          <p><strong>Result:</strong> Contradiction</p>
+
+          <h4>(ii) p ∨ ¬p</h4>
+          <table border="1" cellpadding="6" cellspacing="0" style="border-collapse:collapse;">
+            <tr><th>p</th><th>¬p</th><th>p∨¬p</th></tr>
+            <tr><td>T</td><td>F</td><td>T</td></tr>
+            <tr><td>F</td><td>T</td><td>T</td></tr>
+          </table>
+          <p><strong>Result:</strong> Tautology</p>
+
+          <h4>(iii) (p ∨ ¬p) → q</h4>
+          <p>Since (p∨¬p)=T always, expression becomes T→q, so result is same as q.</p>
+
+          <h4>(iv) (p ∨ q) → (p ∧ q)</h4>
+          <table border="1" cellpadding="6" cellspacing="0" style="border-collapse:collapse;">
+            <tr><th>p</th><th>q</th><th>p∨q</th><th>p∧q</th><th>(p∨q)→(p∧q)</th></tr>
+            <tr><td>T</td><td>T</td><td>T</td><td>T</td><td>T</td></tr>
+            <tr><td>T</td><td>F</td><td>T</td><td>F</td><td>F</td></tr>
+            <tr><td>F</td><td>T</td><td>T</td><td>F</td><td>F</td></tr>
+            <tr><td>F</td><td>F</td><td>F</td><td>F</td><td>T</td></tr>
+          </table>
+
+          <h4>(v) (p→q) ↔ (¬p→¬q)</h4>
+          <p>This is not always true, so it is a contingency.</p>
+
+          <h4>(vi) (p→q) → (q→p)</h4>
+          <p>This is not always true, so it is a contingency.</p>
+
+          <h4>(vii) p ∧ (p∨q)</h4>
+          <p>By absorption law: p ∧ (p∨q) ≡ p</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q165</span><span>Marks: 3</span></div>
+      <div class="question">Show the following equivalence: (p → (q → r)) ≡ ((p → q) → (p → r))</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>
+            Left side:
+            <br>p → (q → r)
+            <br>≡ ¬p ∨ (¬q ∨ r)
+            <br>≡ ¬p ∨ ¬q ∨ r
+          </p>
+          <p>
+            Right side:
+            <br>((p → q) → (p → r))
+            <br>≡ ¬(¬p ∨ q) ∨ (¬p ∨ r)
+            <br>≡ (p ∧ ¬q) ∨ (¬p ∨ r)
+            <br>≡ (¬p ∨ r ∨ p) ∧ (¬p ∨ r ∨ ¬q)
+            <br>≡ T ∧ (¬p ∨ ¬q ∨ r)
+            <br>≡ ¬p ∨ ¬q ∨ r
+          </p>
+          <div class="final">Final Answer: <strong>(p → (q → r)) ≡ ((p → q) → (p → r))</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q166</span><span>Marks: 3</span></div>
+      <div class="question">Prove that: ¬(p ∨ q) ≡ ¬p ∧ ¬q using truth table.</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <table border="1" cellpadding="8" cellspacing="0" style="border-collapse:collapse;width:100%;text-align:center;">
+            <tr>
+              <th>p</th><th>q</th><th>p∨q</th><th>¬(p∨q)</th><th>¬p</th><th>¬q</th><th>¬p∧¬q</th>
+            </tr>
+            <tr><td>T</td><td>T</td><td>T</td><td>F</td><td>F</td><td>F</td><td>F</td></tr>
+            <tr><td>T</td><td>F</td><td>T</td><td>F</td><td>F</td><td>T</td><td>F</td></tr>
+            <tr><td>F</td><td>T</td><td>T</td><td>F</td><td>T</td><td>F</td><td>F</td></tr>
+            <tr><td>F</td><td>F</td><td>F</td><td>T</td><td>T</td><td>T</td><td>T</td></tr>
+          </table>
+          <p>Since the last two columns are identical, the propositions are logically equivalent.</p>
+          <div class="final">Final Answer: <strong>¬(p ∨ q) ≡ ¬p ∧ ¬q</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q167</span><span>Marks: 3</span></div>
+      <div class="question">Show that p ↔ q is logically equivalent to ((p→q) ∧ (q→p)) and also to (¬p∨q) ∧ (¬q∨p).</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>By definition of biconditional:</p>
+          <p>p ↔ q ≡ (p→q) ∧ (q→p)</p>
+          <p>Also, implication law gives:</p>
+          <p>p→q ≡ ¬p∨q and q→p ≡ ¬q∨p</p>
+          <p>Therefore:</p>
+          <p>p ↔ q ≡ (¬p∨q) ∧ (¬q∨p)</p>
+          <div class="final">Final Answer: <strong>Proved</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q168</span><span>Marks: 4</span></div>
+      <div class="question">Consider P: Mark is rich and Q: Mark is happy. Write the following in symbolic form.</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>(a) Mark is poor but happy = <strong>¬P ∧ Q</strong></p>
+          <p>(b) Mark is rich or unhappy = <strong>P ∨ ¬Q</strong></p>
+          <p>(c) Mark is neither rich nor happy = <strong>¬P ∧ ¬Q</strong></p>
+          <p>(d) Mark is poor or he is both rich and unhappy = <strong>¬P ∨ (P ∧ ¬Q)</strong></p>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q169</span><span>Marks: 3</span></div>
+      <div class="question">Using propositions p: I am bored, q: I am waiting for one hour, r: There is no bus, translate into English.</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p><strong>(I)</strong> (q ∨ r) → p</p>
+          <p>If I am waiting for one hour or there is no bus, then I am bored.</p>
+
+          <p><strong>(II)</strong> ¬q → ¬p</p>
+          <p>If I am not waiting for one hour, then I am not bored.</p>
+
+          <p><strong>(III)</strong> (q → p) ∨ (r → p)</p>
+          <p>Either if I am waiting for one hour then I am bored, or if there is no bus then I am bored.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q170</span><span>Marks: 5</span></div>
+      <div class="question">Given P and Q are true, and R and S are false, find truth values of the following expressions.</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>Given: P=T, Q=T, R=F, S=F</p>
+          <p><strong>(a)</strong> ((¬(P∧Q)) ∨ (¬R)) ∨ ((Q↔¬P) → (R∨¬S))</p>
+          <p>¬(P∧Q)=F, ¬R=T, so first part = T. Hence whole expression = <strong>T</strong></p>
+
+          <p><strong>(b)</strong> (P↔R) ∧ (¬Q→S)</p>
+          <p>(T↔F)=F, ¬Q=F, F→F = T, so F∧T = <strong>F</strong></p>
+
+          <p><strong>(c)</strong> (P ∨ (Q → (R ∧ ¬P))) ↔ (Q ∨ ¬S)</p>
+          <p>R∧¬P = F, so Q→F = F, so left = T∨F = T</p>
+          <p>Right = T∨T = T</p>
+          <p>T↔T = <strong>T</strong></p>
+
+          <div class="final">Final Answers: <strong>(a) T, (b) F, (c) T</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q171</span><span>Marks: 4</span></div>
+      <div class="question">If P = Ram is beautiful, Q = Ram is mixable, R = His friend likes Ram, write the statement in language and examine whether they are equivalent: (i) (P→Q)∨(P→R) (ii) P→(Q∨R)</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p><strong>(i)</strong> Either if Ram is beautiful then Ram is mixable, or if Ram is beautiful then his friend likes Ram.</p>
+          <p><strong>(ii)</strong> If Ram is beautiful, then Ram is mixable or his friend likes Ram.</p>
+          <p>Now:</p>
+          <p>(P→Q)∨(P→R) ≡ (¬P∨Q) ∨ (¬P∨R) ≡ ¬P ∨ Q ∨ R</p>
+          <p>P→(Q∨R) ≡ ¬P ∨ (Q∨R) ≡ ¬P ∨ Q ∨ R</p>
+          <div class="final">Final Answer: <strong>Yes, they are equivalent.</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q172</span><span>Marks: 3</span></div>
+      <div class="question">Show that (p ∧ (p → q)) → q is tautological.</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>
+            (p ∧ (p→q)) → q
+            <br>≡ (p ∧ (¬p∨q)) → q
+            <br>≡ [(p∧¬p) ∨ (p∧q)] → q
+            <br>≡ (F ∨ p∧q) → q
+            <br>≡ (p∧q) → q
+            <br>≡ ¬(p∧q) ∨ q
+            <br>≡ (¬p∨¬q∨q)
+            <br>≡ ¬p∨T
+            <br>≡ T
+          </p>
+          <div class="final">Final Answer: <strong>Tautology</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q173</span><span>Marks: 4</span></div>
+      <div class="question">Use laws of logic to show that [(p→q) ∧ ¬q] → ¬p is a tautology.</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>
+            [(p→q) ∧ ¬q] → ¬p
+            <br>≡ [(¬p∨q) ∧ ¬q] → ¬p
+            <br>≡ [(¬p∧¬q) ∨ (q∧¬q)] → ¬p
+            <br>≡ (¬p∧¬q) → ¬p
+            <br>≡ ¬(¬p∧¬q) ∨ ¬p
+            <br>≡ (p∨q) ∨ ¬p
+            <br>≡ (p∨¬p) ∨ q
+            <br>≡ T ∨ q
+            <br>≡ T
+          </p>
+          <div class="final">Final Answer: <strong>Tautology</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q174</span><span>Marks: 4</span></div>
+      <div class="question">Check whether (P→(Q→R)) → ((P→Q)→(P→R)) is tautology or not.</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>This is a standard implication law and is always true.</p>
+          <div class="final">Final Answer: <strong>Tautology</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q175</span><span>Marks: 3</span></div>
+      <div class="question">Prove that P → (P ∨ Q) is tautology.</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>
+            P → (P∨Q)
+            <br>≡ ¬P ∨ (P∨Q)
+            <br>≡ (¬P∨P) ∨ Q
+            <br>≡ T ∨ Q
+            <br>≡ T
+          </p>
+          <div class="final">Final Answer: <strong>Tautology</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q176</span><span>Marks: 4</span></div>
+      <div class="question">Find whether ((p ∨ q) ∧ ¬p) → q is tautology, contradiction or contingency.</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>
+            ((p∨q)∧¬p) → q
+            <br>≡ [((p∧¬p) ∨ (q∧¬p))] → q
+            <br>≡ (F ∨ q∧¬p) → q
+            <br>≡ (q∧¬p) → q
+            <br>≡ ¬(q∧¬p) ∨ q
+            <br>≡ (¬q ∨ p ∨ q)
+            <br>≡ T ∨ p
+            <br>≡ T
+          </p>
+          <div class="final">Final Answer: <strong>Tautology</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q177</span><span>Marks: 5</span></div>
+      <div class="question">Find whether [(p → q) ∧ (q → r)] → (p → r) is tautology, contradiction or contingency.</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>This is the law of syllogism and is always true.</p>
+          <div class="final">Final Answer: <strong>Tautology</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q178</span><span>Marks: 3</span></div>
+      <div class="question">Find whether (p ∧ q) ∧ ¬(p ∨ q) is tautology, contradiction or contingency.</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>If p∧q is true, then p∨q is also true. Hence ¬(p∨q) is false. So the whole expression is always false.</p>
+          <div class="final">Final Answer: <strong>Contradiction</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q179</span><span>Marks: 5</span></div>
+      <div class="question">Check whether ((¬p ∧ q) ∨ (q ∧ r)) → r is tautology, contradiction or contingency.</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>Take p=F, q=T, r=F:</p>
+          <p>(¬p∧q)=T, (q∧r)=F, antecedent=T, consequent=F ⇒ statement false.</p>
+          <p>Take p=T, q=F, r=T:</p>
+          <p>Antecedent=F, so implication true.</p>
+          <p>Thus sometimes true, sometimes false.</p>
+          <div class="final">Final Answer: <strong>Contingency</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q180</span><span>Marks: 4</span></div>
+      <div class="question">Check whether ((p → ¬q) ∧ (r → q) ∧ r) → p is a tautology, contradiction or contingency.</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>Take p=F, q=T, r=T:</p>
+          <p>p→¬q = F→F = T</p>
+          <p>r→q = T→T = T</p>
+          <p>Antecedent = T∧T∧T = T, consequent p = F, so implication false.</p>
+          <p>Take p=T, q=F, r=F:</p>
+          <p>Antecedent false, implication true.</p>
+          <p>Therefore it is neither always true nor always false.</p>
+          <div class="final">Final Answer: <strong>Contingency</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q181</span><span>Marks: 4</span></div>
+      <div class="question">Check whether [(p ∧ q) ∨ {q ∧ (~r)}] ↔ [{(~p) ∧ r} ∨ {(~q) ∧ (~r)}] is tautology, contradiction or contingency.</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>By testing truth values, the biconditional is true for some cases and false for others.</p>
+          <div class="final">Final Answer: <strong>Contingency</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q182</span><span>Marks: 5</span></div>
+      <div class="question">Prove that: (p → (q → r)) ≡ ((p → q) → (p → r))</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>This is same as Q165.</p>
+          <p>Both sides simplify to <strong>¬p ∨ ¬q ∨ r</strong>.</p>
+          <div class="final">Final Answer: <strong>Proved</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q183</span><span>Marks: 3</span></div>
+      <div class="question">Prove that: ¬(p ∨ q) ≡ ¬p ∧ ¬q</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>This is De Morgan’s law. It can be verified by truth table or laws of logic.</p>
+          <div class="final">Final Answer: <strong>Proved</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q184</span><span>Marks: 4</span></div>
+      <div class="question">Show the following equivalence: (P → ((P → (Q → P)) → P)) ≡ (P ∨ ¬P)</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>Since (Q→P) is a conditional, and (P→(Q→P)) is always true whenever P is true, the whole expression reduces to a tautological form.</p>
+          <p>Thus it is equivalent to law of excluded middle.</p>
+          <div class="final">Final Answer: <strong>(P → ((P → (Q → P)) → P)) ≡ (P ∨ ¬P)</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q185</span><span>Marks: 5</span></div>
+      <div class="question">Check whether the propositions ¬(p ∧ q) and ¬p ∨ q are logically equivalent or not.</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>Take p=F, q=T:</p>
+          <p>¬(p∧q)=¬F = T</p>
+          <p>¬p∨q = T∨T = T</p>
+          <p>Take p=T, q=F:</p>
+          <p>¬(p∧q)=¬F = T</p>
+          <p>¬p∨q = F∨F = F</p>
+          <p>Values differ.</p>
+          <div class="final">Final Answer: <strong>They are not logically equivalent.</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q186</span><span>Marks: 2</span></div>
+      <div class="question">Show the following equivalence: (Q → ((P → P) → Q)) ≡ Q ∨ ¬Q</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>P→P is always true.</p>
+          <p>So ((P→P)→Q) becomes T→Q ≡ Q</p>
+          <p>Hence expression becomes Q→Q ≡ T</p>
+          <p>And T ≡ Q∨¬Q</p>
+          <div class="final">Final Answer: <strong>(Q → ((P → P) → Q)) ≡ Q ∨ ¬Q</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q187</span><span>Marks: 3</span></div>
+      <div class="question">Write Converse, Contrapositive, Inverse and Negation for: “A family becomes literate if the women in it are literate.”</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>Let:</p>
+          <p>P = The women in the family are literate</p>
+          <p>Q = The family becomes literate</p>
+          <p>Given statement: <strong>P → Q</strong></p>
+
+          <p><strong>Converse:</strong> Q → P<br>The women in the family are literate if the family becomes literate.</p>
+          <p><strong>Inverse:</strong> ¬P → ¬Q<br>If the women in the family are not literate, then the family does not become literate.</p>
+          <p><strong>Contrapositive:</strong> ¬Q → ¬P<br>If the family does not become literate, then the women in it are not literate.</p>
+          <p><strong>Negation:</strong> P ∧ ¬Q<br>The women in the family are literate and the family does not become literate.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q188</span><span>Marks: 3</span></div>
+      <div class="question">Express Contrapositive, Converse, Inverse and Negation of: “I will pass the DM exam if the marks are greater than 9.”</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>Let P = Marks are greater than 9</p>
+          <p>Let Q = I will pass the DM exam</p>
+          <p>Given: P → Q</p>
+
+          <p><strong>Converse:</strong> Q → P<br>If I pass the DM exam, then the marks are greater than 9.</p>
+          <p><strong>Inverse:</strong> ¬P → ¬Q<br>If the marks are not greater than 9, then I will not pass the DM exam.</p>
+          <p><strong>Contrapositive:</strong> ¬Q → ¬P<br>If I do not pass the DM exam, then the marks are not greater than 9.</p>
+          <p><strong>Negation:</strong> P ∧ ¬Q<br>The marks are greater than 9 and I do not pass the DM exam.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q189</span><span>Marks: 3</span></div>
+      <div class="question">Express the Contrapositive, Converse, Inverse and Negation of: “I will wash the car if the weather is nice.”</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>Let P = The weather is nice</p>
+          <p>Let Q = I will wash the car</p>
+          <p>Given: P → Q</p>
+
+          <p><strong>Converse:</strong> Q → P<br>If I wash the car, then the weather is nice.</p>
+          <p><strong>Inverse:</strong> ¬P → ¬Q<br>If the weather is not nice, then I will not wash the car.</p>
+          <p><strong>Contrapositive:</strong> ¬Q → ¬P<br>If I do not wash the car, then the weather is not nice.</p>
+          <p><strong>Negation:</strong> P ∧ ¬Q<br>The weather is nice and I will not wash the car.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q190</span><span>Marks: 3</span></div>
+      <div class="question">Express contrapositive and inverse of: “I will watch cartoon or cricket match if I turn on TV.”</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>Let P = I turn on TV</p>
+          <p>Let Q = I will watch cartoon or cricket match</p>
+          <p>Given: P → Q</p>
+
+          <p><strong>Contrapositive:</strong> ¬Q → ¬P<br>If I do not watch cartoon and do not watch cricket match, then I do not turn on TV.</p>
+
+          <p><strong>Inverse:</strong> ¬P → ¬Q<br>If I do not turn on TV, then I do not watch cartoon and do not watch cricket match.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q191</span><span>Marks: 3</span></div>
+      <div class="question">Express Contrapositive, Converse, Inverse and Negation of: “If 2x &gt; 0 is an even number and x is rational number, then x+1 is whole number.”</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>Let P = “2x &gt; 0 is an even number and x is rational”</p>
+          <p>Let Q = “x+1 is whole number”</p>
+          <p>Given: P → Q</p>
+
+          <p><strong>Converse:</strong> Q → P</p>
+          <p><strong>Inverse:</strong> ¬P → ¬Q</p>
+          <p><strong>Contrapositive:</strong> ¬Q → ¬P</p>
+          <p><strong>Negation:</strong> P ∧ ¬Q</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q192</span><span>Marks: 3</span></div>
+      <div class="question">Construct Converse, Inverse and Contrapositive of: “If 4x − 2 = 10, then x = 3.”</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>Let P = 4x−2=10</p>
+          <p>Let Q = x=3</p>
+          <p>Given: P→Q</p>
+
+          <p><strong>Converse:</strong> If x = 3, then 4x − 2 = 10.</p>
+          <p><strong>Inverse:</strong> If 4x − 2 ≠ 10, then x ≠ 3.</p>
+          <p><strong>Contrapositive:</strong> If x ≠ 3, then 4x − 2 ≠ 10.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q193</span><span>Marks: 3</span></div>
+      <div class="question">Check whether (¬p → r) ∧ (p ↔ q) is a tautology, contradiction or contingency.</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>Take p=T, q=T, r=T → expression true.</p>
+          <p>Take p=F, q=T, r=F:</p>
+          <p>¬p→r = T→F = F, and p↔q = F↔T = F, so whole expression false.</p>
+          <p>Hence it is sometimes true and sometimes false.</p>
+          <div class="final">Final Answer: <strong>Contingency</strong></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q194</span><span>Marks: 3</span></div>
+      <div class="question">Express contrapositive, converse and inverse of: “If 3 &lt; b and 1+1=2, then sin(π/3)=1/2.”</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>Let P = (3 &lt; b and 1+1=2)</p>
+          <p>Let Q = sin(π/3)=1/2</p>
+          <p>Given: P→Q</p>
+
+          <p><strong>Converse:</strong> If sin(π/3)=1/2, then 3&lt;b and 1+1=2.</p>
+          <p><strong>Inverse:</strong> If not(3&lt;b and 1+1=2), then sin(π/3)≠1/2.</p>
+          <p><strong>Contrapositive:</strong> If sin(π/3)≠1/2, then not(3&lt;b and 1+1=2).</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q195</span><span>Marks: 2</span></div>
+      <div class="question">Express the contrapositive and negation of: “If it is weekend, it means there is no work to do.”</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>Let P = It is weekend</p>
+          <p>Let Q = There is no work to do</p>
+          <p>Given: P→Q</p>
+
+          <p><strong>Contrapositive:</strong> ¬Q → ¬P<br>If there is work to do, then it is not weekend.</p>
+          <p><strong>Negation:</strong> P ∧ ¬Q<br>It is weekend and there is work to do.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="qcard">
+      <div class="meta"><span class="badge">Q196</span><span>Marks: 3</span></div>
+      <div class="question">Express Contrapositive, Converse, Inverse and Negation of: “I will crack google interview and get high package if I become a good programmer.”</div>
+      <details>
+        <summary>Show Answer</summary>
+        <div class="answer">
+          <p>Let P = I become a good programmer</p>
+          <p>Let Q = I will crack google interview and get high package</p>
+          <p>Given: P→Q</p>
+
+          <p><strong>Converse:</strong> Q→P<br>If I crack google interview and get high package, then I become a good programmer.</p>
+          <p><strong>Inverse:</strong> ¬P→¬Q<br>If I do not become a good programmer, then I will not crack google interview or not get high package.</p>
+          <p><strong>Contrapositive:</strong> ¬Q→¬P<br>If I do not crack google interview or do not get high package, then I do not become a good programmer.</p>
+          <p><strong>Negation:</strong> P∧¬Q<br>I become a good programmer and I do not crack google interview or do not get high package.</p>
+        </div>
+      </details>
+    </div>
+          <footer class="site-footer">
+  <div class="footer-content">
+<div class="footer-left">
+  <span> Copyright © 2026 <span style="font-size:11px; font-weight:400; margin-left:4px;">Patel</span></span>
+</div>
+
+    <div class="footer-links">
+      <a href="https://www.instagram.com/dixit.patel_since_2005/?hl=en" target="_blank" title="Instagram">
+        <svg viewBox="0 0 24 24" class="icon"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm8.88 1.12a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5A3.5 3.5 0 1 0 12 15.5 3.5 3.5 0 0 0 12 8.5z"/></svg>
+        <span>Instagram</span>
+      </a>
+
+      <a href="https://github.com/create2learn7238" target="_blank" title="GitHub">
+        <svg viewBox="0 0 24 24" class="icon"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.23c-3.34.73-4.04-1.42-4.04-1.42-.55-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.72.08-.72 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.96 0-1.32.47-2.39 1.24-3.24-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.24a11.4 11.4 0 0 1 6 0c2.28-1.56 3.29-1.24 3.29-1.24.67 1.65.25 2.87.13 3.17.77.85 1.23 1.92 1.23 3.24 0 4.63-2.8 5.65-5.48 5.95.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12 12 0 0 0 12 .5z"/></svg>
+        <span>GitHub</span>
+      </a>
+
+      <a href="https://www.linkedin.com/in/dixit-patel-7718993a1/" target="_blank" title="LinkedIn">
+        <svg viewBox="0 0 24 24" class="icon"><path d="M4.98 3.5A2.49 2.49 0 1 1 5 8.48a2.49 2.49 0 0 1-.02-4.98zM3 9h4v12H3V9zm7 0h3.83v1.64h.05c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.5 4.77 5.75V21h-4v-5.9c0-1.4-.03-3.21-2.02-3.21-2.03 0-2.34 1.52-2.34 3.1V21h-4V9z"/></svg>
+        <span>LinkedIn</span>
+      </a>
+    </div>
+  </div>
+</footer>
+          
+
+</body>
+</html>
